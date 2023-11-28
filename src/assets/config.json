@@ -1,0 +1,93 @@
+{
+    "showName": false,
+    "name": "unset",
+    "greeting": "hi there",
+    "links": {
+        "links": {
+            "1": [
+                {
+                    "label": "proton",
+                    "url": "https://proton.me"
+                },
+                {
+                    "label": "connectme",
+                    "url": "https://connectme.horizoncollege.nl/"
+                },
+                {
+                    "label": "trello",
+                    "url": "https://trello.com"
+                },
+                {
+                    "label": "jarvis",
+                    "url": "https://purmerend.jarvis.bit-academy.nl/a/dashboard"
+                },
+                {
+                    "label": "mattermost",
+                    "url": "https://chat.jarvis.bit-academy.nl/"
+                },
+                {
+                    "label": "teams",
+                    "url": "https://teams.microsoft.com/_?lm=deeplink&lmsrc=NeutralHomePageWeb&cmpid=WebSignIn&culture=en-us&country=us#/apps/66aeee93-507d-479a-a3ef-8f494af43945/sections/classroom"
+                }
+            ],
+            "2": [
+                {
+                    "label": "github",
+                    "url": "https://github.com/"
+                },
+                {
+                    "label": "laracasts",
+                    "url": "https://laracasts.com/"
+                },
+                {
+                    "label": "laravel",
+                    "url": "https://laravel.com/docs/10.x"
+                },
+                {
+                    "label": "devdocs",
+                    "url": "https://devdocs.io/"
+                },
+                {
+                    "label": "ploi",
+                    "url": "https://ploi.io/"
+                }
+            ],
+            "3": [
+                {
+                    "label": "youtube",
+                    "url": "https://www.youtube.com/"
+                },
+                {
+                    "label": "jellyfin",
+                    "url": "https://cinna.triton.usbx.me/jellyfin/"
+                },
+                {
+                    "label": "twitch",
+                    "url": "https://twitch.tv/"
+                },
+                {
+                    "label": "buienalarm",
+                    "url": "https://www.buienalarm.nl/"
+                }
+            ],
+            "4": [
+                {
+                    "label": "chatgpt",
+                    "url": "https://chat.openai.com/"
+                },
+                {
+                    "label": "phind",
+                    "url": "https://www.phind.com/"
+                },
+                {
+                    "label": "pomodoro",
+                    "url": "https://pomofocus.io/"
+                },
+                {
+                    "label": "readme.so",
+                    "url": "https://readme.so/editor"
+                }
+            ]
+        }
+    }
+}

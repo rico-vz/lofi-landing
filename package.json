@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@russo-programmisto/easy-storage": "^2.1.8",
     "vue": "^3.3.4"
   },
   "devDependencies": {
