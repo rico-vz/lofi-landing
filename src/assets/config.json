@@ -1,5 +1,8 @@
 {
     "showName": false,
+    "showSnow": false,
+    "showRain": false,
+    "openNewTab": false,
     "name": "unset",
     "greeting": "hi there",
     "links": {

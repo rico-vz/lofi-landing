@@ -5,7 +5,12 @@
                 <li class="title">{{ key }}</li>
                 <ul>
                     <li v-for="(value, key) in value" :key="key">
+                    <li v-if="newTab">
                         <a :href="value.url" target="_blank">{{ value.label }}</a>
+                    </li>
+                    <li v-else>
+                        <a :href="value.url">{{ value.label }}</a>
+                    </li>
                     </li>
                 </ul>
             </div>
@@ -14,7 +19,6 @@
 </template>
 
 <script>
-
 export default {
     props: {
         title: {
@@ -24,6 +28,10 @@ export default {
         links: {
             type: String,
             required: true
+        },
+        newTab: {
+            type: Boolean,
+            default: false
         }
     }
 };
