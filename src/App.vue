@@ -16,9 +16,11 @@
             <Bookmarks :bookmarkData="JSON.stringify(bookmarkData)" :newTab="config.openNewTab" />
 
             <!-- Button to open settings modal -->
-            <button class="open-settings-btn" @click="showModal = true">⚙️</button>
+            <button class="open-settings-btn" @click="showSettingsModal = true">⚙️</button>
+            <button class="open-bookmarks-btn" @click="showBookmarksModal = true">🔖</button>
             <!-- SettingsModal component -->
-            <SettingsModal v-if="showModal" @close="showModal = false" />
+            <SettingsModal v-if="showSettingsModal" @close="showSettingsModal = false" />
+            <BookmarksModal v-if="showBookmarksModal" @close="showBookmarksModal = false" />
         </div>
     </div>
 </template>
@@ -27,18 +29,21 @@
 import config from '@/assets/config.json';
 import bookmarkData from '@/assets/bookmarks.json';
 import Bookmarks from '@/components/Bookmarks.vue';
-import SettingsModal from '@/components/SettingsModal.vue'; // Import your SettingsModal component
+import SettingsModal from '@/components/SettingsModal.vue';
+import BookmarksModal from '@/components/BookmarksModal.vue';
 
 export default {
     components: {
         Bookmarks,
         SettingsModal,
+        BookmarksModal,
     },
     data() {
         return {
             config: {},
             bookmarkData: {},
-            showModal: false,
+            showSettingsModal: false,
+            showBookmarksModal: false,
         };
     },
     mounted() {
