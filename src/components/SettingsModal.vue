@@ -33,7 +33,7 @@
 
             <div class="btn-container">
                 <a class="export-btn"
-                    :href="'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(editedConfig, null, 2))"
+                    :href="'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify({ config: editedConfig, bookmarks: editedBookmarkData }, null, 2))"
                     :download="'lofi_landing-config_' + new Date().toISOString().split('T')[0] + '.json'">
                     Export
                 </a>
@@ -53,11 +53,13 @@ export default {
     data() {
         return {
             editedConfig: JSON.parse(JSON.stringify(this.$parent.config)),
+            editedBookmarkData: JSON.parse(JSON.stringify(this.$parent.bookmarkData)),
         };
     },
     methods: {
         saveConfig() {
             this.$parent.config = this.editedConfig;
+            this.$parent.bookmarkData = this.editedBookmarkData;
             localStorage.setItem('config', JSON.stringify(this.editedConfig));
             this.$emit('close');
         },
@@ -69,130 +71,12 @@ export default {
             if (!file) return;
             const reader = new FileReader();
             reader.onload = (e) => {
-                const config = JSON.parse(e.target.result);
+                const { config, bookmarks } = JSON.parse(e.target.result);
                 this.editedConfig = config;
+                this.editedBookmarkData = bookmarks;
             };
             reader.readAsText(file);
         },
     },
 };
 </script>
-  
-<style scoped>
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 20px;
-    border-radius: 8px;
-    position: relative;
-    max-width: 400px;
-    width: 80%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 24px;
-    color: #999;
-}
-
-.btn-container {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-}
-
-.save-btn,
-.cancel-btn,
-.export-btn,
-.import-btn {
-    padding: 8px 16px;
-    margin-left: 10px;
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
-    font-size: 14px;
-    color: #fff;
-}
-
-.save-btn {
-    background-color: #4caf50;
-}
-
-.cancel-btn {
-    background-color: #f44336;
-}
-
-.export-btn {
-    font-size: 12px;
-    background-color: #2196f3;
-}
-
-.import-btn {
-    font-size: 12px;
-    background-color: #2196f3;
-}
-
-.import-btn>label {
-    cursor: pointer;
-}
-
-.modal-settings {
-    display: flex;
-    flex-direction: column;
-
-}
-
-.modal-settings>div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.modal-settings>div>label {
-    margin-right: 10px;
-}
-
-.modal-settings>div>input {
-    margin-right: 10px;
-}
-
-.import-btn>input {
-    display: none;
-}
-
-@media (max-width: 768px) {
-    .modal-content {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .modal-content {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 320px) {
-    .modal-content {
-        padding: 5px;
-    }
-}
-</style>
-  

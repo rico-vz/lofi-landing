@@ -13,13 +13,10 @@
                 <p>> {{ config.greeting }}{{ config.showName ? ' ' + config.name : '' }}<span class="blinking">_</span></p>
             </div>
 
-            <div class="bookmarkData">
-                <Bookmarks :title="key" :bookmarks="JSON.stringify(bookmarkData)" :newTab="config.openNewTab" />
-            </div>
+            <Bookmarks :bookmarkData="JSON.stringify(bookmarkData)" :newTab="config.openNewTab" />
 
             <!-- Button to open settings modal -->
-            <button @click="showModal = true">Open Settings</button>
-
+            <button class="open-settings-btn" @click="showModal = true">⚙️</button>
             <!-- SettingsModal component -->
             <SettingsModal v-if="showModal" @close="showModal = false" />
         </div>
@@ -57,4 +54,3 @@ export default {
     },
 };
 </script>
-  
