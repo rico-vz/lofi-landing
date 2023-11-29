@@ -13,10 +13,8 @@
                 <p>> {{ config.greeting }}{{ config.showName ? ' ' + config.name : '' }}<span class="blinking">_</span></p>
             </div>
 
-            <div class="bookmarks">
-                <template v-for="(value, key) in config.links" :key="key">
-                    <linksCategory :title="key" :links="JSON.stringify(value)" :newTab="config.openNewTab" />
-                </template>
+            <div class="bookmarkData">
+                <Bookmarks :title="key" :bookmarks="JSON.stringify(bookmarkData)" :newTab="config.openNewTab" />
             </div>
 
             <!-- Button to open settings modal -->
@@ -30,17 +28,19 @@
   
 <script>
 import config from '@/assets/config.json';
-import linksCategory from '@/components/linksCategory.vue';
+import bookmarkData from '@/assets/bookmarks.json';
+import Bookmarks from '@/components/Bookmarks.vue';
 import SettingsModal from '@/components/SettingsModal.vue'; // Import your SettingsModal component
 
 export default {
     components: {
-        linksCategory,
+        Bookmarks,
         SettingsModal,
     },
     data() {
         return {
             config: {},
+            bookmarkData: {},
             showModal: false,
         };
     },
@@ -48,7 +48,12 @@ export default {
         if (!localStorage.getItem('config')) {
             localStorage.setItem('config', JSON.stringify(config));
         }
+        if (!localStorage.getItem('bookmarkData')) {
+            localStorage.setItem('bookmarkData', JSON.stringify(bookmarkData));
+        }
+
         this.config = JSON.parse(localStorage.getItem('config'));
+        this.bookmarkData = JSON.parse(localStorage.getItem('bookmarkData'));
     },
 };
 </script>
