@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
-:root {
+/* TODO: Make a theme switcher */
+/* !"Regular" Theme */
+/* :root {
   --color-bg: #282828;
   --color-fg: #EADBB2;
   --color-link: #8F9191;
   --color-link-visited: #8F9191;
   --color-link-hover: #FA7921;
+} */
+
+/* !"Catppuccin Mocha" Theme */
+:root {
+  --color-bg: #1e1e2e;
+  --color-fg: #cba6f7;
+  --color-link: #eba0ac;
+  --color-link-visited: #eba0ac;
+  --color-link-hover: #cba6f7;
 }
 
 html,
