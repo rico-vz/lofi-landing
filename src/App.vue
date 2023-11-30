@@ -1,7 +1,7 @@
 <template>
-    <component is="script" v-if="config.showSnow" scoped>
-        new Hohoho({snowColor:"#ffffff",snowOpacity:"0.6",ns:100,radius:3,interval:30});
-    </component>
+    <SnowEffect v-if="config.showSnow" :config="config" />
+    <RainEffect v-if="config.showRain" :config="config" />
+
 
     <div class="container">
         <!-- Left Container -->
@@ -37,10 +37,20 @@ import bookmarkData from '@/assets/bookmarks.json';
 import Bookmarks from '@/components/Bookmarks.vue';
 import SettingsModal from '@/components/SettingsModal.vue';
 import BookmarksModal from '@/components/BookmarksModal.vue';
+import SnowEffect from '@/components/SnowEffect.vue';
+import RainEffect from '@/components/RainEffect.vue';
 
 export default {
     watch: {
         'config.showSnow': function (newVal) {
+            if (!newVal) {
+                const canvas = document.getElementById('canvas');
+                if (canvas) {
+                    canvas.remove();
+                }
+            }
+        },
+        'config.showRain': function (newVal) {
             if (!newVal) {
                 const canvas = document.getElementById('canvas');
                 if (canvas) {
@@ -53,6 +63,8 @@ export default {
         Bookmarks,
         SettingsModal,
         BookmarksModal,
+        SnowEffect,
+        RainEffect
     },
     data() {
         return {
