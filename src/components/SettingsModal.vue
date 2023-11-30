@@ -61,6 +61,7 @@ export default {
             this.$parent.config = this.editedConfig;
             this.$parent.bookmarkData = this.editedBookmarkData;
             localStorage.setItem('config', JSON.stringify(this.editedConfig));
+            localStorage.setItem('bookmarkData', JSON.stringify(this.editedBookmarkData));
             this.$emit('close');
         },
         closeModal() {
