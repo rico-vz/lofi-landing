@@ -1,4 +1,8 @@
 <template>
+    <component is="script" v-if="config.showSnow" scoped>
+        new Hohoho({snowColor:"#ffffff",snowOpacity:"0.6",ns:100,radius:3,interval:30});
+    </component>
+
     <div class="container">
         <!-- Left Container -->
         <div class="left-container">
@@ -24,6 +28,8 @@
         </div>
     </div>
 </template>
+
+
   
 <script>
 import config from '@/assets/config.json';
@@ -33,6 +39,14 @@ import SettingsModal from '@/components/SettingsModal.vue';
 import BookmarksModal from '@/components/BookmarksModal.vue';
 
 export default {
+    watch: {
+        'config.showSnow': function (newVal) {
+            if (!newVal) {
+                const canvas = document.getElementById('canvas');
+                canvas.remove();
+            }
+        }
+    },
     components: {
         Bookmarks,
         SettingsModal,
