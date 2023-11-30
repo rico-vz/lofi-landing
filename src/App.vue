@@ -43,7 +43,9 @@ export default {
         'config.showSnow': function (newVal) {
             if (!newVal) {
                 const canvas = document.getElementById('canvas');
-                canvas.remove();
+                if (canvas) {
+                    canvas.remove();
+                }
             }
         }
     },
