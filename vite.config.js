@@ -5,10 +5,7 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    minify: "terser",
-    terserOptions: {
-
-    }
+    minify: 'terser',
   },
   plugins: [
     vue(),
