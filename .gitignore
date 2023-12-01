@@ -32,3 +32,5 @@ build/
 css-obfuscator/
 
 out/
+
+.vite-ssg-temp/xyqo2d3rn0/
