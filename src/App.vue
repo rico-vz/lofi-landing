@@ -25,8 +25,6 @@
     </div>
 </template>
 
-
-  
 <script>
 import config from '@/assets/config.json';
 import bookmarkData from '@/assets/bookmarks.json';
