@@ -41,17 +41,17 @@ body {
   min-height: 100vh;
 }
 
-.left-container {
+.left {
   grid-area: left;
   aspect-ratio: 1/1;
 }
 
-.right-container {
+.right {
   grid-area: right;
   width: 100%;
 }
 
-.gif img {
+.pic img {
   max-width: 100%;
   max-height: 100%;
 }
@@ -64,7 +64,7 @@ body {
 
 }
 
-.category {
+.cat {
   display: flex;
   flex-direction: column;
   width: 180px;
@@ -125,7 +125,7 @@ a:hover {
   }
 }
 
-.open-settings-btn {
+.settings-btn {
   position: absolute;
   bottom: 20px;
   left: 20px;
@@ -138,7 +138,7 @@ a:hover {
   transition: opacity 0.3s ease;
 }
 
-.open-bookmarks-btn {
+.bookmark-btn {
   position: absolute;
   bottom: 20px;
   left: 50px;
@@ -152,8 +152,8 @@ a:hover {
 }
 
 
-.open-settings-btn:hover,
-.open-bookmarks-btn:hover {
+.settings-btn:hover,
+.bookmark-btn:hover {
   opacity: 1;
 }
 
@@ -171,7 +171,7 @@ a:hover {
   backdrop-filter: blur(5px);
 }
 
-.modal-content {
+.modal-in {
   background-color: rgba(0, 0, 0, 0.75);
   padding: 20px;
   border-radius: 8px;
@@ -256,19 +256,19 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .modal-content {
+  .modal-in {
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .modal-content {
+  .modal-in {
     padding: 10px;
   }
 }
 
 @media (max-width: 320px) {
-  .modal-content {
+  .modal-in {
     padding: 5px;
   }
 }
@@ -295,7 +295,7 @@ a:hover {
   backdrop-filter: blur(5px);
 }
 
-.modal-content-bookmarks {
+.modal-in-bookmarks {
   background-color: rgba(0, 0, 0, 0.75);
   padding: 20px;
   border-radius: 8px;
@@ -325,7 +325,7 @@ a:hover {
 
 }
 
-.category-modal {
+.cat-modal {
   display: flex;
   flex-direction: column;
   width: 180px;

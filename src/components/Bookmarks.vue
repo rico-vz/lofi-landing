@@ -1,6 +1,6 @@
 <template>
     <div class="bookmarks">
-        <div class="category" v-for="(bookmark, index) in JSON.parse(bookmarkData)" :key="index">
+        <div class="cat" v-for="(bookmark, index) in JSON.parse(bookmarkData)" :key="index">
             <div class="links">
                 <li class="title">{{ index }}</li>
                 <li v-for="(link, index) in bookmark" :key="index">

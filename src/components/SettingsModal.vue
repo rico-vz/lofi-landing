@@ -1,6 +1,6 @@
 <template>
     <div class="modal">
-        <div class="modal-content">
+        <div class="modal-in">
             <span class="close-btn" @click="closeModal">×</span>
             <h2>Lofi Landing • Settings</h2>
 

@@ -3,21 +3,21 @@
     <RainEffect v-if="config.showRain" :config="config" />
 
     <div class="container">
-        <div class="left-container">
-            <div class="gif">
+        <div class="left">
+            <div class="pic">
                 <img src="@/assets/lofi.jpg" />
             </div>
         </div>
 
-        <div class="right-container">
+        <div class="right">
             <div class="head">
                 <p>> {{ config.greeting }}{{ config.showName ? ' ' + config.name : '' }}<span class="blinking">_</span></p>
             </div>
 
             <Bookmarks :bookmarkData="JSON.stringify(bookmarkData)" :newTab="config.openNewTab" />
 
-            <button class="open-settings-btn" @click="showSettingsModal = true">⚙️</button>
-            <button class="open-bookmarks-btn" @click="showBookmarksModal = true">🔖</button>
+            <button class="settings-btn" @click="showSettingsModal = true">⚙️</button>
+            <button class="bookmark-btn" @click="showBookmarksModal = true">🔖</button>
 
             <SettingsModal v-if="showSettingsModal" @close="showSettingsModal = false" />
             <BookmarksModal v-if="showBookmarksModal" @close="showBookmarksModal = false" />

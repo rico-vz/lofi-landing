@@ -1,6 +1,6 @@
 <template>
     <div class="modal-bookmarks">
-        <div class="modal-content-bookmarks">
+        <div class="modal-in-bookmarks">
             <div class="modal-header">
                 <span class="close-btn" @click="closeModal">×</span>
 
@@ -8,7 +8,7 @@
             </div>
             <div class="modal-body">
                 <div class="bookmarks">
-                    <div class="category-modal" v-for="(bookmark, index) in editedBookmarks" :key="index">
+                    <div class="cat-modal" v-for="(bookmark, index) in editedBookmarks" :key="index">
                         <div class="links-modal">
                             <button class="add-link-btn btn-style" @click="addLink(index)">➕</button>
 
